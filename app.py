@@ -46,8 +46,12 @@ def comprar(valorUsuario, resp):
             elif d['nome'] == 'Doce A' and d['valor'] <= valorUsuario:
                 tres_pontos()
                 print(Fore.GREEN + '=-'*26 + '\n{:^52}\n'.format('Sua compra') + '=-'*26)
-                print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(valorUsuario - d["valor"]))}' + Style.RESET_ALL)
-                return True
+                if valorUsuario <= 10:
+                    print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(valorUsuario - d["valor"]))}' + Style.RESET_ALL)
+                    return True
+                if valorUsuario > 10:
+                    print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(10 - d["valor"]))}' + Style.RESET_ALL)
+                    return True
     elif 'b' == resp[-1] or '2' in resp:
         for d in doces:
             if d['nome'] == 'Doce B' and d['valor'] > valorUsuario:
@@ -56,8 +60,12 @@ def comprar(valorUsuario, resp):
             elif d['nome'] == 'Doce B' and d['valor'] <= valorUsuario:
                 tres_pontos()
                 print(Fore.GREEN + '=-'*26 + '\n{:^52}\n'.format('Sua compra') + '=-'*26)
-                print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(valorUsuario - d["valor"]))}' + Style.RESET_ALL)
-                return True
+                if valorUsuario <= 10:
+                    print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(valorUsuario - d["valor"]))}' + Style.RESET_ALL)
+                    return True
+                if valorUsuario > 10:
+                    print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(10 - d["valor"]))}' + Style.RESET_ALL)
+                    return True
     elif 'c' == resp[-1] or '3' in resp:
         for d in doces:
             if d['nome'] == 'Doce C' and d['valor'] > valorUsuario:
@@ -66,8 +74,12 @@ def comprar(valorUsuario, resp):
             elif d['nome'] == 'Doce C' and d['valor'] <= valorUsuario:
                 tres_pontos()
                 print(Fore.GREEN + '=-'*26 + '\n{:^52}\n'.format('Sua compra') + '=-'*26)
-                print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(valorUsuario - d["valor"]))}' + Style.RESET_ALL)
-                return True
+                if valorUsuario <= 10:
+                    print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(valorUsuario - d["valor"]))}' + Style.RESET_ALL)
+                    return True
+                if valorUsuario > 10:
+                    print(f'{d["nome"]}\t\t\t\t{"Seu troco: R${:,.2f}".format(float(10 - d["valor"]))}' + Style.RESET_ALL)
+                    return True
 
 menu_inicial()
 while continuar is True:
